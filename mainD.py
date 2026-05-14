@@ -7,7 +7,7 @@ from colorama import init, Fore
 init(autoreset=True)
 
 
-df = pd.read_excel("cuerpos_celestes.xlsx")
+df = pd.read_excel("cuerpos_celestes2.xlsx")
 cuerpos = df.to_dict(orient="records")
 
 #funcion para titulo
