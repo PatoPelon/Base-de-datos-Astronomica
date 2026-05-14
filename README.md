@@ -1,9 +1,181 @@
 # Base-de-datos-Astronomica
-aqui subiremos nuestro proyecto :)
-import pandas as pd
 
-# Leer archivo
-df = pd.read_excel("cuerpos_celestes.xlsx")
+# 🌌 Sistema Astronómico
 
-# Mostrar datos
-print(df)
+Proyecto desarrollado en Python para la gestión de cuerpos celestes mediante una interfaz interactiva en consola.
+
+El sistema permite visualizar, buscar y agregar cuerpos celestes almacenados en un archivo Excel, utilizando tablas con diseño estético y colores en terminal.
+
+---
+
+# 🚀 Características
+
+- 📋 Visualización de cuerpos celestes en tablas organizadas
+- 🔎 Búsqueda por tipo de cuerpo celeste
+- ➕ Registro de nuevos cuerpos
+- 💾 Guardado automático en archivo Excel
+- 🎨 Interfaz visual con colores y diseño en consola
+- ✅ Validación de datos ingresados por el usuario
+
+---
+
+# 🛠 Tecnologías utilizadas
+
+- Python
+- Pandas
+- Tabulate
+- Colorama
+- OpenPyXL
+
+---
+
+# 📂 Estructura del proyecto
+
+```text
+sistema_astronomico/
+│
+├── main.py
+├── cuerpos_celestes.xlsx
+├── README.md
+└── requirements.txt
+```
+
+---
+
+# 📦 Instalación
+
+## 1. Clonar el repositorio
+
+```bash
+git clone https://github.com/tu_usuario/tu_repositorio.git
+```
+
+## 2. Entrar a la carpeta del proyecto
+
+```bash
+cd tu_repositorio
+```
+
+## 3. Instalar dependencias
+
+```bash
+pip install pandas tabulate colorama openpyxl
+```
+
+O usando requirements:
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+# ▶️ Ejecución
+
+Ejecuta el programa con:
+
+```bash
+python main.py
+```
+
+---
+
+# 📋 Funcionalidades del sistema
+
+## 1️⃣ Ver cuerpos celestes
+
+Muestra todos los registros almacenados en el archivo Excel mediante tablas organizadas.
+
+## 2️⃣ Buscar por tipo
+
+Permite buscar cuerpos celestes según su tipo:
+
+- Planeta
+- Estrella
+- Satélite
+- Galaxia
+- Nebulosa
+- etc.
+
+## 3️⃣ Agregar cuerpo celeste
+
+El usuario puede registrar nuevos cuerpos ingresando:
+
+- Nombre
+- Tipo
+- Ubicación
+- Distancia
+- Diámetro
+
+El sistema valida que:
+- Los textos no estén vacíos
+- Los números sean válidos y positivos
+
+## 4️⃣ Guardar y salir
+
+Los datos se almacenan automáticamente en:
+
+```text
+cuerpos_celestes.xlsx
+```
+
+---
+
+# 📊 Formato de datos
+
+El archivo Excel debe contener columnas como:
+
+| nombre | tipo | ubicacion | distancia | diametro |
+|---|---|---|---|---|
+| Tierra | Planeta | Sistema Solar | 0 | 12742 |
+
+---
+
+# 🎨 Librerías utilizadas
+
+## Pandas
+
+Utilizada para:
+- Leer archivos Excel
+- Convertir datos en DataFrames
+- Guardar información
+
+## Tabulate
+
+Permite mostrar tablas con formato elegante en consola.
+
+## Colorama
+
+Agrega colores y mejor apariencia visual al sistema.
+
+---
+
+# 🧠 Conceptos aplicados
+
+Este proyecto utiliza:
+
+- Funciones
+- Ciclos `while`
+- Condicionales
+- Manejo de excepciones (`try-except`)
+- Validación de datos
+- Diccionarios
+- Listas
+- Archivos Excel
+- Programación modular
+
+---
+
+# 👨‍💻 Autores
+- César Alexander Segura Díaz
+- Damían Medina Llanas
+- Yann Andrés Rodríguez Hernández
+
+Proyecto académico desarrollado en Python.
+
+---
+
+# 📄 Licencia
+
+Este proyecto es de uso educativo.
+
