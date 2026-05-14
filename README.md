@@ -2,24 +2,24 @@
 
 # 🌌 Sistema Astronómico
 
-Proyecto desarrollado en Python para la gestión de cuerpos celestes mediante una interfaz interactiva en consola.
+Proyecto desarrollado en Python para la gestión de cuerpos celestes mediante interfaz de consola.
 
-El sistema permite visualizar, buscar y agregar cuerpos celestes almacenados en un archivo Excel, utilizando tablas con diseño estético y colores en terminal.
-
----
-
-# 🚀 Características
-
-- 📋 Visualización de cuerpos celestes en tablas organizadas
-- 🔎 Búsqueda por tipo de cuerpo celeste
-- ➕ Registro de nuevos cuerpos
-- 💾 Guardado automático en archivo Excel
-- 🎨 Interfaz visual con colores y diseño en consola
-- ✅ Validación de datos ingresados por el usuario
+El sistema permite visualizar, buscar y agregar cuerpos celestes almacenados en un archivo Excel, utilizando tablas. Permitiendo mayor facilidad
+a aquellas personas que buscan organizar datos astronómicos.
 
 ---
 
-# 🛠 Tecnologías utilizadas
+# Características del programa
+
+-  Visualización de cuerpos celestes en tablas organizadas con 
+-  Búsqueda por tipo de cuerpo celeste
+-  Se pueden registrar nuevos cuerpos
+-  Guardado automático en el archivo Excel
+-  Interfaz visual
+
+---
+
+# Programa y librerías utilizadas
 
 - Python
 - Pandas
@@ -29,7 +29,7 @@ El sistema permite visualizar, buscar y agregar cuerpos celestes almacenados en 
 
 ---
 
-# 📂 Estructura del proyecto
+# Estructura del proyecto
 
 ```text
 sistema_astronomico/
@@ -42,7 +42,7 @@ sistema_astronomico/
 
 ---
 
-# 📦 Instalación
+# Instalación para el programa
 
 ## 1. Clonar el repositorio
 
@@ -70,7 +70,7 @@ pip install -r requirements.txt
 
 ---
 
-# ▶️ Ejecución
+#  Ejecución
 
 Ejecuta el programa con:
 
@@ -80,13 +80,13 @@ python main.py
 
 ---
 
-# 📋 Funcionalidades del sistema
+# Funcionalidades del sistema
 
-## 1️⃣ Ver cuerpos celestes
+## 1 Ver cuerpos celestes
 
 Muestra todos los registros almacenados en el archivo Excel mediante tablas organizadas.
 
-## 2️⃣ Buscar por tipo
+## 2 Buscar por tipo
 
 Permite buscar cuerpos celestes según su tipo:
 
@@ -97,7 +97,7 @@ Permite buscar cuerpos celestes según su tipo:
 - Nebulosa
 - etc.
 
-## 3️⃣ Agregar cuerpo celeste
+## 3 Agregar cuerpo celeste
 
 El usuario puede registrar nuevos cuerpos ingresando:
 
@@ -111,7 +111,7 @@ El sistema valida que:
 - Los textos no estén vacíos
 - Los números sean válidos y positivos
 
-## 4️⃣ Guardar y salir
+## 4️ Guardar y salir
 
 Los datos se almacenan automáticamente en:
 
@@ -121,7 +121,7 @@ cuerpos_celestes.xlsx
 
 ---
 
-# 📊 Formato de datos
+# Formato de datos
 
 El archivo Excel debe contener columnas como:
 
@@ -131,7 +131,7 @@ El archivo Excel debe contener columnas como:
 
 ---
 
-# 🎨 Librerías utilizadas
+# Librerías utilizadas
 
 ## Pandas
 
@@ -150,7 +150,7 @@ Agrega colores y mejor apariencia visual al sistema.
 
 ---
 
-# 🧠 Conceptos aplicados
+# Conceptos aplicados
 
 Este proyecto utiliza:
 
@@ -166,16 +166,17 @@ Este proyecto utiliza:
 
 ---
 
-# 👨‍💻 Autores
+# Nombre de integrantes:
+
 - César Alexander Segura Díaz
-- Damían Medina Llanas
+- Damián Medina Llanas
 - Yann Andrés Rodríguez Hernández
 
-Proyecto académico desarrollado en Python.
+Proyecto desarrollado en Python.
 
 ---
 
-# 📄 Licencia
+# Licencia
 
-Este proyecto es de uso educativo.
+Ninguna. Este programa es de uso académico.
 
