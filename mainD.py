@@ -30,12 +30,15 @@ def menu():
 
     print(Fore.MAGENTA + """
 ╔════════════════════════════════════╗
-║         MENÚ PRINCIPAL            ║
+║         MENÚ PRINCIPAL             ║
 ╠════════════════════════════════════╣
 ║ 1️⃣  Ver todos los cuerpos         ║
 ║ 2️⃣  Buscar por tipo               ║
 ║ 3️⃣  Agregar cuerpo celeste        ║
-║ 4️⃣  Guardar y salir               ║
+║ 4️⃣  Eliminar cuerpo celeste       ║
+║ 5️⃣  _______________               ║
+║ 6️⃣  _______________               ║
+║ 7️⃣  Guardar y salir               ║
 ╚════════════════════════════════════╝
 """)
 
@@ -151,6 +154,35 @@ def guardar():
         print(Fore.RED + f"\n❌ Error al guardar: {e}")
 
 
+#funcion para borrar un cuerpo celeste
+def borrar_cuerpo():
+
+    while True:
+
+        nombre = pedir_texto("\n🗑 Nombre del cuerpo a eliminar: ")
+
+        encontrado = False
+
+        for c in cuerpos:
+
+            if c["nombre"].lower() == nombre.lower():
+
+                cuerpos.remove(c)
+
+                print(Fore.GREEN + f"\n✅ '{nombre}' fue eliminado correctamente.")
+
+                encontrado = True
+
+                break
+
+        if encontrado:
+            break
+
+        else:
+            print(Fore.RED + "\n❌ No se encontró ese cuerpo celeste.")
+            print(Fore.YELLOW + "Intenta nuevamente.")
+
+
 # PROGRAMA PRINCIPAL
 
 while True:
@@ -175,8 +207,20 @@ while True:
 
         agregar_cuerpo()
 
-    # GUARDAR Y SALIR
+    # ELIMINAR CUERPO
     elif opcion == "4":
+
+        borrar_cuerpo()
+
+    # MODIFICAR CUERPO
+
+
+
+    # BUSCAR POR LETRA INICIAL
+
+    
+    # GUARDAR Y SALIR
+    elif opcion == "7":
 
         guardar()
 
@@ -190,44 +234,3 @@ while True:
         print(Fore.RED + "\n❌ Opción inválida.")
 
     input(Fore.YELLOW + "\nPresiona ENTER para continuar...")
-
-'''
-#ESTE ES EL MENU, SI TIENEN MAS IDEAS DEL MENU PODEMOS AGREGARLAS
-#while True: 
-    print("\n1. Ver datos")
-    print("2. Buscar por tipo")
-    print("3. Agregar")
-    print("4. Guardar y salir")
-
-    opcion = input("Opción: ")
-
-#AQUI FALTA AGREGAR COSAS, AGREGAR VARIABBLES , ADEMAS DE CUERPOS
-#QUIZA PODRIAMOS USAR FUNCIONES
-    if opcion == "1":
-        for c in cuerpos:
-            print(c)
-
-    elif opcion == "2":
-        tipo = input("Tipo: ")
-        for c in cuerpos:
-            if c["tipo"].lower() == tipo.lower():
-                print(c)
-
-    elif opcion == "3":
-        nuevo = {
-            "nombre": input("Nombre: "),
-            "tipo": input("Tipo: "),
-            "ubicacion": input("Ubicación: "),
-            "distancia": float(input("Distancia: ")),
-            "diametro": float(input("Diámetro: "))
-        }
-        cuerpos.append(nuevo)
-
-    elif opcion == "4":
-        df = pd.DataFrame(cuerpos)
-        df.to_excel("cuerpos_celestes.xlsx", index=False)
-        print("Guardado.")
-        break
-
-    else:
-        print("Opción inválida")'''
