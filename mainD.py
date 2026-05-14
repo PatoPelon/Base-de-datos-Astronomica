@@ -182,7 +182,89 @@ def borrar_cuerpo():
             print(Fore.RED + "\n❌ No se encontró ese cuerpo celeste.")
             print(Fore.YELLOW + "Intenta nuevamente.")
 
+# FUNCIÓN PARA MODIFICAR DATOS
+def modificar_cuerpo():
 
+    print(Fore.YELLOW + "\n✏ MODIFICAR CUERPO CELESTE ✏\n")
+
+    nombre = pedir_texto("Nombre del cuerpo a modificar: ")
+
+    encontrado = None
+
+    # buscar el cuerpo
+    for c in cuerpos:
+
+        if c["nombre"].lower() == nombre.lower():
+            encontrado = c
+            break
+
+    # validar existencia
+    if encontrado is None:
+
+        print(Fore.RED + "\n❌ Cuerpo no encontrado.")
+        return
+
+    # mostrar datos actuales
+    print(Fore.CYAN + "\n📋 DATOS ACTUALES:\n")
+
+    print(tabulate(
+        [encontrado],
+        headers="keys",
+        tablefmt="fancy_grid",
+        showindex=False
+    ))
+
+    # pedir nuevos datos
+    print(Fore.YELLOW + "\n🔧 Ingresa los nuevos datos:\n")
+
+    encontrado["nombre"] = pedir_texto("Nuevo nombre: ")
+    encontrado["tipo"] = pedir_texto("Nuevo tipo: ")
+    encontrado["ubicacion"] = pedir_texto("Nueva ubicación: ")
+    encontrado["distancia"] = pedir_numero("Nueva distancia: ")
+    encontrado["diametro"] = pedir_numero("Nuevo diámetro: ")
+
+    print(Fore.GREEN + "\n✅ Datos modificados correctamente.")
+ 
+# FUNCIÓN PARA BUSCAR POR INICIAL
+def buscar_inicial():
+
+    print(Fore.YELLOW + "\n🔠 BUSCAR POR INICIAL 🔠\n")
+
+    letra = pedir_texto("Ingresa una letra: ")
+
+    # validar
+    while len(letra) != 1 or not letra.isalpha():
+
+        print(Fore.RED + "❌ Ingresa solo UNA letra válida.")
+
+        letra = pedir_texto("Ingresa una letra: ")
+
+    encontrados = []
+
+    # recorrer cuerpos
+    for c in cuerpos:
+
+        # verificar inicial
+        if c["nombre"].lower().startswith(letra.lower()):
+
+            encontrados.append(c)
+
+    # mostrar resultados
+    if encontrados:
+
+        print(Fore.GREEN + "\n✅ CUERPOS ENCONTRADOS:\n")
+
+        print(tabulate(
+            encontrados,
+            headers="keys",
+            tablefmt="fancy_grid",
+            showindex=False
+        ))
+
+    else:
+
+        print(Fore.RED + "\n❌ No hay cuerpos con esa inicial.")
+        
 # PROGRAMA PRINCIPAL
 
 while True:
@@ -213,11 +295,14 @@ while True:
         borrar_cuerpo()
 
     # MODIFICAR CUERPO
-
-
+    elif opcion == "5":
+     
+        modificar_cuerpo()
 
     # BUSCAR POR LETRA INICIAL
-
+    elif opcion =="6"
+    
+       buscar_inicial():
     
     # GUARDAR Y SALIR
     elif opcion == "7":
