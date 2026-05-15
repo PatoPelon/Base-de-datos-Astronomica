@@ -6,8 +6,14 @@ from colorama import init, Fore
 
 init(autoreset=True)
 
+import os
 
-df = pd.read_excel("cuerpos_celestes2.xlsx")
+print(os.getcwd())
+print(os.listdir())
+df = pd.read_excel("cuerpos_celestes.xlsx")
+
+# limpiar espacios en columnas
+df.columns = df.columns.str.strip().str.lower()
 cuerpos = df.to_dict(orient="records")
 
 #funcion para titulo
@@ -32,13 +38,13 @@ def menu():
 ╔════════════════════════════════════╗
 ║         MENÚ PRINCIPAL             ║
 ╠════════════════════════════════════╣
-║ 1️⃣  Ver todos los cuerpos         ║
-║ 2️⃣  Buscar por tipo               ║
-║ 3️⃣  Agregar cuerpo celeste        ║
-║ 4️⃣  Eliminar cuerpo celeste       ║
-║ 5️⃣  Modificar datos               ║
-║ 6️⃣  Buscar por inicial            ║
-║ 7️⃣  Guardar y salir               ║
+║ 1️  Ver todos los cuerpos           ║
+║ 2️  Buscar por tipo                 ║
+║ 3️  Agregar cuerpo celeste          ║
+║ 4️  Eliminar cuerpo celeste         ║
+║ 5️  Modificar datos                 ║
+║ 6️  Buscar por inicial              ║
+║ 7️  Guardar y salir                 ║
 ╚════════════════════════════════════╝
 """)
 
@@ -96,7 +102,7 @@ def buscar_tipo():
 
     for c in cuerpos:
 
-        if c["tipo"].lower() == tipo.lower():
+        if c.get("tipo", "").lower() == tipo.lower():
             encontrados.append(c)
 
     if encontrados:
@@ -122,16 +128,16 @@ def agregar_cuerpo():
 
     nuevo = {
 
-        "nombre": pedir_texto("Nombre: "),
+      "nombre": pedir_texto("Nombre: "),
 
-        "tipo": pedir_texto("Tipo: "),
+      "tipo": pedir_texto("Tipo: "),
 
-        "ubicacion": pedir_texto("Ubicación: "),
+      "ubicacion": pedir_texto("Ubicación: "),
 
-        "distancia": pedir_numero("Distancia: "),
+      "distancia (ly)": pedir_numero("Distancia: "),
 
-        "diametro": pedir_numero("Diámetro: ")
-    }
+      "diametro (km)": pedir_numero("Diámetro: ")
+      }
 
     cuerpos.append(nuevo)
 
@@ -220,8 +226,8 @@ def modificar_cuerpo():
     encontrado["nombre"] = pedir_texto("Nuevo nombre: ")
     encontrado["tipo"] = pedir_texto("Nuevo tipo: ")
     encontrado["ubicacion"] = pedir_texto("Nueva ubicación: ")
-    encontrado["distancia"] = pedir_numero("Nueva distancia: ")
-    encontrado["diametro"] = pedir_numero("Nuevo diámetro: ")
+    encontrado["distancia (ly)"] = pedir_numero("Nueva distancia: ")
+    encontrado["diametro (km)"] = pedir_numero("Nuevo diámetro: ")
 
     print(Fore.GREEN + "\n✅ Datos modificados correctamente.")
  
@@ -300,9 +306,9 @@ while True:
         modificar_cuerpo()
 
     # BUSCAR POR LETRA INICIAL
-    elif opcion =="6"
+    elif opcion =="6":
     
-       buscar_inicial():
+       buscar_inicial()
     
     # GUARDAR Y SALIR
     elif opcion == "7":
